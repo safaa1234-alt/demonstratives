@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An accessible webpage for teaching the order of adjectives to people with vision issues, dyslexia, and ADHD.">
+    <title>Learning the Order of Adjectives</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            font-size: 18px;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+        .high-contrast {
+            background-color: #000;
+            color: #fff;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            font-size: 2rem;
+        }
+        h1 {
+            color: #2c7be5;
+        }
+        .example {
+            background-color: #e0f7fa;
+            padding: 10px;
+            border-left: 5px solid #00796b;
+            margin: 15px 0;
+        }
+        .tips {
+            background-color: #fff3e0;
+            padding: 10px;
+            border-left: 5px solid #f57c00;
+            margin: 15px 0;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .contrast-toggle {
+            background-color: #4caf50;
+            color: white;
+        }
+        .text-to-speech {
+            background-color: #ff9800;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Learning the Order of Adjectives</h1>
+        <p>When using multiple adjectives to describe a noun, there is a specific order that native speakers typically follow. This order helps sentences sound natural and clear.</p>
+
+        <h2>The Order of Adjectives</h2>
+        <p>The general order of adjectives is as follows:</p>
+        <div class="tips">
+            <ol>
+                <li><strong>Quantity</strong>: one, two, several</li>
+                <li><strong>Opinion</strong>: beautiful, delicious, ugly</li>
+                <li><strong>Size</strong>: small, large, tiny</li>
+                <li><strong>Age</strong>: old, young, ancient</li>
+                <li><strong>Shape</strong>: round, square, flat</li>
+                <li><strong>Color</strong>: red, blue, yellow</li>
+                <li><strong>Origin</strong>: American, French, Chinese</li>
+                <li><strong>Material</strong>: wooden, plastic, metal</li>
+                <li><strong>Purpose</strong>: cooking (as in a cooking pot), sleeping (as in a sleeping bag)</li>
+            </ol>
+        </div>
+
+        <h2>Examples</h2>
+        <div class="example">
+            <p><strong>Correct:</strong> I bought a <em>beautiful small red wooden chair</em>.</p>
+            <p><strong>Correct:</strong> She has <em>three large old square tables</em> in her dining room.</p>
+            <p><strong>Incorrect:</strong> I bought a <em>wooden red small beautiful chair</em>.</p>
+        </div>
+
+        <h2>Tips for Remembering</h2>
+        <div class="tips">
+            <ul>
+                <li>Use the acronym <strong>OSASCOMP</strong> (Opinion, Size, Age, Shape, Color, Origin, Material, Purpose) to remember the order.</li>
+                <li>Practice by describing objects around you using multiple adjectives.</li>
+            </ul>
+        </div>
+
+        <h2>Interactive Tips</h2>
+        <div>
+            <p><strong>Tip:</strong> Try rearranging the adjectives in a sentence to see what sounds natural versus awkward. Stick to the order above!</p>
+        </div>
+
+        <div class="button-container">
+            <button class="contrast-toggle" onclick="toggleContrast()">Toggle High Contrast</button>
+            <button class="text-to-speech" onclick="readAloud()">Read Aloud</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+        function readAloud() {
+            const content = document.querySelector('.content').innerText;
+            const speech = new SpeechSynthesisUtterance(content);
+            speech.lang = 'en-US';
+            speech.rate = 1;
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+</body>
+</html>

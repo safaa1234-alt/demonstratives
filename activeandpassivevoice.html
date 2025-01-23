@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An accessible webpage for teaching active and passive voice to people with vision issues, dyslexia, and ADHD.">
+    <title>Learning Active and Passive Voice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            font-size: 18px;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+        .high-contrast {
+            background-color: #000;
+            color: #fff;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            font-size: 2rem;
+        }
+        h1 {
+            color: #2c7be5;
+        }
+        .example {
+            background-color: #e0f7fa;
+            padding: 10px;
+            border-left: 5px solid #00796b;
+            margin: 15px 0;
+        }
+        .tips {
+            background-color: #fff3e0;
+            padding: 10px;
+            border-left: 5px solid #f57c00;
+            margin: 15px 0;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .contrast-toggle {
+            background-color: #4caf50;
+            color: white;
+        }
+        .text-to-speech {
+            background-color: #ff9800;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Learning Active and Passive Voice</h1>
+        <p>In English, sentences can be written in two voices: <strong>active</strong> and <strong>passive</strong>. Understanding the difference helps make your writing clear and effective.</p>
+
+        <h2>Active Voice</h2>
+        <p>In active voice, the subject of the sentence performs the action. It is direct and strong.</p>
+        <div class="example">
+            <p><strong>Example:</strong> The cat <em>chased</em> the mouse.</p>
+            <p><strong>Explanation:</strong> The subject (cat) performs the action (chased).</p>
+        </div>
+
+        <h2>Passive Voice</h2>
+        <p>In passive voice, the subject receives the action. It is less direct and often wordier.</p>
+        <div class="example">
+            <p><strong>Example:</strong> The mouse <em>was chased</em> by the cat.</p>
+            <p><strong>Explanation:</strong> The subject (mouse) receives the action (was chased).</p>
+        </div>
+
+        <h2>When to Use Each Voice</h2>
+        <div class="tips">
+            <ul>
+                <li>Use <strong>active voice</strong> when you want your writing to be clear and engaging.</li>
+                <li>Use <strong>passive voice</strong> when the focus is on the action or the recipient of the action, not the doer. Example: <em>The painting was admired by everyone.</em></li>
+            </ul>
+        </div>
+
+        <h2>How to Identify and Change Voice</h2>
+        <p>To identify the voice of a sentence, ask yourself:</p>
+        <ul>
+            <li>Is the subject performing the action? (Active voice)</li>
+            <li>Is the subject receiving the action? (Passive voice)</li>
+        </ul>
+        <p>To change from passive to active:</p>
+        <ol>
+            <li>Identify the subject performing the action.</li>
+            <li>Rewrite the sentence so the subject comes first, followed by the verb and object.</li>
+        </ol>
+
+        <h2>Examples</h2>
+        <div class="example">
+            <p><strong>Passive:</strong> The book <em>was written</em> by the author.</p>
+            <p><strong>Active:</strong> The author <em>wrote</em> the book.</p>
+        </div>
+
+        <h2>Interactive Tips</h2>
+        <div>
+            <p><strong>Tip:</strong> If a sentence feels awkward or too long, check if it’s in passive voice and try rewriting it in active voice.</p>
+        </div>
+
+        <div class="button-container">
+            <button class="contrast-toggle" onclick="toggleContrast()">Toggle High Contrast</button>
+            <button class="text-to-speech" onclick="readAloud()">Read Aloud</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+        function readAloud() {
+            const content = document.querySelector('.content').innerText;
+            const speech = new SpeechSynthesisUtterance(content);
+            speech.lang = 'en-US';
+            speech.rate = 1;
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+</body>
+</html>
